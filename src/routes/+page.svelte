@@ -1,6 +1,7 @@
 <script lang="ts">
   import FormInput from '$lib/components/FormInput.svelte';
   import Accordion from '$lib/components/Accordion.svelte';
+  import Close from '$lib/icons/close.svelte';
   import { enhance } from '$app/forms';
   import { createToaster, melt } from '@melt-ui/svelte';
   import { flip } from 'svelte/animate';
@@ -121,10 +122,10 @@
         </div>
         <button
           use:melt={$close(id)}
-          class="absolute right-4 top-4 grid size-6 place-items-center rounded-full bg-opacity-50
-          text-red-500 hover:bg-red-300"
+          class="absolute right-4 top-4 grid size-6 place-items-center bg-opacity-50
+          text-red-500 hover:text-red-600"
         >
-          X
+          <Close />
         </button>
       </div>
     </div>
