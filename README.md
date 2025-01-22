@@ -10,6 +10,17 @@ HashPass is a no-storage password managment solution, where everything happens w
 
 To make a long story short, a friend of mine called [Devenison](https://devenison.com) got the idea for this kind of software from 4Chan and made it into a bash script. In the state that he found it in, it was just a series of commands that would output the final password in plaintext in the shell, which is obviouslynot a good idea. From there, he sent it to me, and I thought it was pretty cool, and decided to turn it into a simple web GUI :D
 
+## Creating a local instance
+Follow the steps below to create a local HashPass instance
+
+1. Clone the Repo<br>
+   `git clone https://github.com/arithefirst/hashpass`
+2. Install dependencies<br>
+  `npm i`
+3. Start the server<br>
+  `npm run dev` for development server or<br>
+  `npm run build` and `npm run preview` for production server
+
 ## Techstack
 
 <img height="48px" src="https://raw.githubusercontent.com/arithefirst/hashpass/refs/heads/master/README-DEPS/meltui.svg" title="MeltUI"> <img src="https://go-skill-icons.vercel.app/api/icons?i=svelte" title="SvelteKit"> <img src="https://go-skill-icons.vercel.app/api/icons?i=tailwindcss" title="TailwindCSS"> <img src="https://go-skill-icons.vercel.app/api/icons?i=typescript" title="TypeScript">
