@@ -1,7 +1,6 @@
 # HashPass
 
-A no-storage and no-logs password managment solution
-
+A no-storage and no-logs password management solution based on hashing algorithms
 ## What is HashPass?
 
 HashPass is a no-storage password managment solution, where everything happens without logs or any info saved. It works by using the information you put into it to generate a secure password that can be reproduced on any instance of HashPass across the world, as long as you use the same values. First, it smashes together the domain, username, and master password. then, it uses a hashing algorithm of your choosing, encrypts that data, and then encodes it into base64. Finally, the password gets trimmed to your requested length and copied to your clipboard.
