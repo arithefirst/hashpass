@@ -4,7 +4,7 @@
   import { createLabel, createToaster, melt } from '@melt-ui/svelte';
   import { flip } from 'svelte/animate';
   import { fly } from 'svelte/transition';
-  import type { PageData, ActionData } from './$types';
+  import { page } from '$app/state';
 
   interface ToastData {
     title: string;
@@ -12,12 +12,7 @@
     color: string;
   }
 
-  interface props {
-    data: PageData;
-    form: ActionData;
-  }
-
-  const { data, form }: props = $props();
+  const { form } = $props();
 
   const {
     elements: { content, title, description, close },
@@ -26,30 +21,32 @@
     actions: { portal },
   } = createToaster<ToastData>();
 
-  function createToast() {
-    addToast({
-      data: {
-        title: 'boo'!,
-        description: 'This toast is scary!',
-        color: 'bg-green-500',
-      },
-    });
-  }
-
   const {
     elements: { root },
   } = createLabel();
+
+  $effect(() => {
+    if (form?.success) {
+      addToast({
+        data: {
+          title: 'Success!',
+          description: 'Password generated and copied to clipboard.',
+          color: 'bg-green-500',
+        },
+      });
+    } else if (!form?.success && page.status !== 200) {
+      addToast({
+        data: {
+          title: 'Error',
+          description: `An error occured while generating the password: ${form?.e.message}`,
+          color: 'bg-red-500',
+        },
+      });
+    }
+  });
 </script>
 
-<button
-  class="fixed left-2 top-2 inline-flex items-center justify-center rounded-xl
-  bg-black px-4 py-3 font-medium leading-none text-white shadow-md hover:opacity-75"
-  onclick={createToast}
->
-  Bake Toast
-</button>
-
-<main class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md border-2 border-black p-8">
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md border-2 border-black p-8">
   <form method="POST" use:enhance>
     <div class="flex flex-col items-start justify-center">
       <FormInput type="url" fieldName="Website" placeholder="www.example.com" />
@@ -75,7 +72,7 @@
       </button>
     </div>
   </form>
-</main>
+</div>
 
 <div class="fixed right-0 top-0 z-50 m-4 flex flex-col items-end gap-2 md:bottom-0 md:top-auto" use:portal>
   {#each $toasts as { id, data } (id)}
