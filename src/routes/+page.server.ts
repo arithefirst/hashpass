@@ -9,8 +9,10 @@ export const actions = {
       const preHashedString = `${data.get('username')}@${data.get('website')}:${data.get('masterpassword')}`;
       const b64hash = await generateHash(preHashedString, data.get('hashtype')! as HashType);
       const charLimit = parseInt(data.get('characterlimit')! as string, 10);
-      if (charLimit == 0 || b64hash.slice(0, -1).length <= charLimit) {
+      if ( charLimit == 0 || b64hash.slice(0, -1).length <= charLimit) {
         return { success: true, password: b64hash.slice(0, -1) };
+      } else if (Number.isNaN(charLimit)) {
+        return {success: true, password: b64hash.slice(0, 16)}
       }
       return { success: true, password: b64hash.slice(0, charLimit) };
     } catch (e) {
