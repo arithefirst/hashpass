@@ -47,6 +47,19 @@
 
 <svelte:head>
   <title>HashPass</title>
+  <meta name="description" content="A no-storage and no-logs password management solution based on hashing algorithms." />
+  <meta itemprop="name" content="HashPass" />
+  <meta itemprop="description" content="A no-storage and no-logs password management solution based on hashing algorithms." />
+  <meta itemprop="image" content="https://hashpass-tan.vercel.app/card.png" />
+  <meta property="og:url" content="https://hashpass-tan.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="HashPass" />
+  <meta property="og:description" content="A no-storage and no-logs password management solution based on hashing algorithms." />
+  <meta property="og:image" content="https://hashpass-tan.vercel.app/card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HashPass" />
+  <meta name="twitter:description" content="A no-storage and no-logs password management solution based on hashing algorithms." />
+  <meta name="twitter:image" content="https://hashpass-tan.vercel.app/card.png" />
 </svelte:head>
 
 <main class="flex h-screen gap-2 p-4 md:absolute md:left-1/2 md:top-1/2 md:h-auto md:-translate-x-1/2 md:-translate-y-1/2 md:p-0">
