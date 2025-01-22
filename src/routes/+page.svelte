@@ -25,7 +25,7 @@
   $effect(() => {
     if (form?.success) {
       // Copy PW to clipboard and send success toast
-      navigator.clipboard.writeText(form?.password);
+      navigator.clipboard.writeText(form?.password!);
       addToast({
         data: {
           title: 'Success!',
@@ -37,7 +37,7 @@
       addToast({
         data: {
           title: 'Error',
-          description: `An error occured while generating the password: ${form?.e.message}`,
+          description: `An error occured while generating the password: ${(form?.e as Error).message}`,
           color: 'bg-red-500',
         },
       });
