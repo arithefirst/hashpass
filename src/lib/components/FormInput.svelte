@@ -1,10 +1,4 @@
 <script lang="ts">
-  import { createLabel, melt } from '@melt-ui/svelte';
-
-  const {
-    elements: { root },
-  } = createLabel();
-
   interface props {
     fieldName: string;
     placeholder: string;
@@ -14,7 +8,7 @@
   const { fieldName, placeholder, type }: props = $props();
 </script>
 
-<label use:melt={$root} for={fieldName.toLowerCase().replace(' ', '')} class="mb-0.5 mt-0.5 font-medium text-black" data-melt-part="root">
+<label for={fieldName.toLowerCase().replace(' ', '')} class="mb-0.5 mt-0.5 font-medium text-black">
   <span>{fieldName}</span>
 </label>
 <input

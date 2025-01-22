@@ -1,7 +1,7 @@
 <script lang="ts">
   import FormInput from '$lib/components/FormInput.svelte';
   import { enhance } from '$app/forms';
-  import { createLabel, createToaster, melt } from '@melt-ui/svelte';
+  import { createToaster, melt } from '@melt-ui/svelte';
   import { flip } from 'svelte/animate';
   import { fly } from 'svelte/transition';
   import { page } from '$app/state';
@@ -20,10 +20,6 @@
     states: { toasts },
     actions: { portal },
   } = createToaster<ToastData>();
-
-  const {
-    elements: { root },
-  } = createLabel();
 
   $effect(() => {
     if (form?.success) {
@@ -55,7 +51,7 @@
       <FormInput type="number" fieldName="Character Limit" placeholder="16" />
 
       <!-- Hashes Dropdown -->
-      <label use:melt={$root} for="hashtype" class="mb-0.5 mt-0.5 font-medium text-black" data-melt-part="root">
+      <label for="hashtype" class="mb-0.5 mt-0.5 font-medium text-black">
         <span>Hash Type</span>
       </label>
       <select id="hashtype" name="hashtype" class="mb-0.5 h-10 w-[240px] rounded-md border-[1px] border-black bg-white px-3 py-2 text-black">
