@@ -49,8 +49,8 @@
   <title>HashPass</title>
 </svelte:head>
 
-<main class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 gap-2">
-  <form method="POST" use:enhance class="h-[35.375rem] w-96 rounded-md border-2 border-black bg-white p-8">
+<main class="h-screen gap-2 p-4 md:absolute md:left-1/2 md:top-1/2 md:flex md:h-auto md:-translate-x-1/2 md:-translate-y-1/2 md:p-0">
+  <form method="POST" use:enhance class="size-full rounded-md border-2 border-black bg-white p-8 md:h-[35.375rem] md:w-96">
     <h1 class="mx-3 text-lg font-bold">HashPass</h1>
     <hr class="mx-3 mb-2 border-[1px] border-black" />
     <div class="flex flex-col items-start justify-center">

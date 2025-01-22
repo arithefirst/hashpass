@@ -33,7 +33,7 @@
   ];
 </script>
 
-<div class="h-[35.375rem] w-96 rounded-md border-2 border-black bg-white p-8" {...$root}>
+<div class="hidden h-[35.375rem] w-96 rounded-md border-2 border-black bg-white p-8 md:block" {...$root}>
   {#each items as { id, title, description }, i}
     <div
       use:melt={$item(id)}
