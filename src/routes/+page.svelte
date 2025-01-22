@@ -23,6 +23,8 @@
 
   $effect(() => {
     if (form?.success) {
+      // Copy PW to clipboard and send success toast
+      navigator.clipboard.writeText(form?.password);
       addToast({
         data: {
           title: 'Success!',
