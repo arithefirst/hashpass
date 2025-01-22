@@ -1,6 +1,7 @@
 # HashPass
 
 A no-storage and no-logs password management solution based on hashing algorithms
+<img width="660px" src="/static/card.png">
 
 ## What is HashPass?
 
