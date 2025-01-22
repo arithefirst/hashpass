@@ -1,5 +1,6 @@
 <script lang="ts">
   import FormInput from '$lib/components/FormInput.svelte';
+  import Accordion from '$lib/components/Accordion.svelte';
   import { enhance } from '$app/forms';
   import { createToaster, melt } from '@melt-ui/svelte';
   import { flip } from 'svelte/animate';
@@ -44,8 +45,14 @@
   });
 </script>
 
-<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md border-2 border-black p-8">
-  <form method="POST" use:enhance>
+<svelte:head>
+  <title>HashPass</title>
+</svelte:head>
+
+<main class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 gap-2">
+  <form method="POST" use:enhance class="h-[35.375rem] w-96 rounded-md border-2 border-black bg-white p-8">
+    <h1 class="mx-3 text-lg font-bold">HashPass</h1>
+    <hr class="mx-3 mb-2 border-[1px] border-black" />
     <div class="flex flex-col items-start justify-center">
       <FormInput type="url" fieldName="Website" placeholder="www.example.com" />
       <FormInput type="text" fieldName="Username" placeholder="janedoe1970" />
@@ -53,10 +60,10 @@
       <FormInput type="number" fieldName="Character Limit" placeholder="16" />
 
       <!-- Hashes Dropdown -->
-      <label for="hashtype" class="mb-0.5 mt-0.5 font-medium text-black">
+      <label for="hashtype" class="mx-3 my-0.5 font-medium text-black">
         <span>Hash Type</span>
       </label>
-      <select id="hashtype" name="hashtype" class="mb-0.5 h-10 w-[240px] rounded-md border-[1px] border-black bg-white px-3 py-2 text-black">
+      <select id="hashtype" name="hashtype" class="mx-auto mb-0.5 h-10 w-11/12 rounded-md border-[1px] border-black bg-white px-3 py-2 text-black">
         <option value="sha256">SHA-256</option>
         <option value="sha512">SHA-512</option>
         <option>bcrypt</option>
@@ -70,7 +77,10 @@
       </button>
     </div>
   </form>
-</div>
+  <div>
+    <Accordion />
+  </div>
+</main>
 
 <div class="fixed right-0 top-0 z-50 m-4 flex flex-col items-end gap-2 md:bottom-0 md:top-auto" use:portal>
   {#each $toasts as { id, data } (id)}
