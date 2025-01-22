@@ -54,16 +54,21 @@
     <h1 class="mx-3 text-lg font-bold">HashPass</h1>
     <hr class="mx-3 mb-2 border-[1px] border-black" />
     <div class="flex flex-col items-start justify-center">
-      <FormInput type="url" fieldName="Website" placeholder="www.example.com" />
-      <FormInput type="text" fieldName="Username" placeholder="janedoe1970" />
-      <FormInput type="password" fieldName="Master Password" placeholder="password123" />
+      <FormInput type="url" fieldName="Website" placeholder="www.example.com" required />
+      <FormInput type="text" fieldName="Username" placeholder="janedoe1970" required />
+      <FormInput type="password" fieldName="Master Password" placeholder="password123" required />
       <FormInput type="number" fieldName="Character Limit" placeholder="16" />
 
       <!-- Hashes Dropdown -->
       <label for="hashtype" class="mx-3 my-0.5 font-medium text-black">
         <span>Hash Type</span>
       </label>
-      <select id="hashtype" name="hashtype" class="mx-auto mb-0.5 h-10 w-11/12 rounded-md border-[1px] border-black bg-white px-3 py-2 text-black">
+      <select
+        id="hashtype"
+        name="hashtype"
+        class="mx-auto mb-0.5 h-10 w-11/12 rounded-md border-[1px] border-black bg-white px-3 py-2 text-black"
+        required
+      >
         <option value="sha256">SHA-256</option>
         <option value="sha512">SHA-512</option>
         <option>bcrypt</option>
