@@ -34,7 +34,7 @@
 </script>
 
 <div class="hidden h-[35.375rem] w-96 rounded-md border-2 border-black bg-white p-8 md:block" {...$root}>
-  {#each items as { id, title, description }, i}
+  {#each items as { id, title, description }}
     <div
       use:melt={$item(id)}
       class="overflow-hidden transition-colors first:rounded-t-xl

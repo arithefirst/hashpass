@@ -2,7 +2,7 @@
   import Github from '$lib/icons/github.svelte';
   import Info from '$lib/icons/info.svelte';
   interface props {
-    className?: String;
+    className?: string;
   }
 
   const { className = '' }: props = $props();

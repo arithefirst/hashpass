@@ -8,7 +8,6 @@
   import { flip } from 'svelte/animate';
   import { fly } from 'svelte/transition';
   import { page } from '$app/state';
-  import OssButton from '$lib/components/OSSButton.svelte';
 
   interface ToastData {
     title: string;
@@ -28,7 +27,7 @@
   $effect(() => {
     if (form?.success) {
       // Copy PW to clipboard and send success toast
-      navigator.clipboard.writeText(form?.password!);
+      navigator.clipboard.writeText(form?.password ?? '');
       addToast({
         data: {
           title: 'Success!',
