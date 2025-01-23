@@ -1,12 +1,14 @@
 <script lang="ts">
   import FormInput from '$lib/components/FormInput.svelte';
   import Accordion from '$lib/components/Accordion.svelte';
+  import OSSButton from '$lib/components/OSSButton.svelte';
   import Close from '$lib/icons/close.svelte';
   import { enhance } from '$app/forms';
   import { createToaster, melt } from '@melt-ui/svelte';
   import { flip } from 'svelte/animate';
   import { fly } from 'svelte/transition';
   import { page } from '$app/state';
+  import OssButton from '$lib/components/OSSButton.svelte';
 
   interface ToastData {
     title: string;
@@ -131,3 +133,5 @@
     </div>
   {/each}
 </div>
+
+<OSSButton className="fixed bottom-1 left-1" />
