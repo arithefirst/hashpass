@@ -89,8 +89,8 @@
         <option value="md5">MD5</option>
       </select>
       <button
-        class="mx-auto mt-2 inline-flex items-center justify-center rounded-xl bg-black px-4 py-3
-        font-medium leading-none text-white shadow-md hover:opacity-75"
+        class="mx-auto mt-2 inline-flex items-center justify-center rounded-lg bg-black px-4 py-3
+        align-bottom font-medium leading-none text-white shadow-md hover:opacity-75"
       >
         Generate Password
       </button>
